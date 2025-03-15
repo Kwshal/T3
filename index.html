@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
+    <!-- <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="/asset/node_modules/@flaticon/flaticon-uicons/css/regular/all.css"> -->
+</head>
+
+<body>
+    <!-- <i class="fi fi-tr-mobile-button"></i> -->
+
+    <div id="container">
+
+        <div id="board">
+            <span index="0" class="cell"></span>
+            <span index="1" class="cell"></span>
+            <span index="2" class="cell"></span>
+            <span index="3" class="cell"></span>
+            <span index="4" class="cell"></span>
+            <span index="5" class="cell"></span>
+            <span index="6" class="cell"></span>
+            <span index="7" class="cell"></span>
+            <span index="8" class="cell"></span>
+        </div>
+        <span id="winStroke1"></span>
+        <span id="winStroke2"></span>
+
+    </div>
+    <h1 id="winMsg"></h1>
+    <div class="button-cont">
+        <button id="reset" onclick="clearOut()"><span class="o"></span></button><br>
+        <button id="outline" onclick="outlined()"><span class="o"></span></button>
+        <button id="minimal" onclick="minimalistic()"><span class="o"></span></button>
+        <button id="carved" onclick="sculpt()"><span class="o"></span></button>
+        <button id="default" onclick="defaultTheme()"><span class="o"></span></button>
+    </div>
+
+
+    <h1 id="test"></h1>
+
+    <script src="script.js"></script>
+    <script src="themes.js"></script>
+
+    <!-- <script src="app.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+double stroke win has the higher priority.
+themes: minimal, dark, or cyberpunk;
+
+
+
+
+Learnt => inspect mode of browser are better for catching error in js
+problem: not showing winner when cell count is 9.
+
+bug:
+rotate and transform using list  \\\  solved
+
+double stroke win problem \\\ solved
+
+movesPlayed = ["","","","","","","","",""] is causing errors. \\\ undid
+
+function not getting value of movesPlayed hence showing no winner.

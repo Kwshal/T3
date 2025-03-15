@@ -1,0 +1,45 @@
+button {
+    height: 30px;
+    width: 200px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+@keyframes spirit {
+
+    0%,
+    100% {
+        box-shadow: -1px -1px 2px rgb(0, 0, 0), 0px 0px 12px 0px rgb(21, 55, 58), 1px 1px 12px rgb(121, 158, 57);
+    }
+
+    25% {
+        box-shadow: 1px -1px 2px rgb(0, 0, 0), 0px 0px 12px 0px rgb(21, 55, 58), -1px 1px 12px rgb(121, 158, 57);
+    }
+
+    50% {
+        box-shadow: 1px 1px 2px rgb(0, 0, 0), 0x 0px 12px 0px rgb(21, 55, 58), -1px -1px 12px rgb(121, 158, 57);
+    }
+
+    75% {
+        box-shadow: -1px 1px 2px rgb(0, 0, 0), 0px 0px 12px 0px rgb(21, 55, 58), 1px -1px 12px rgb(121, 158, 57);
+    }
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
