@@ -65,7 +65,7 @@ function checkWinner() {
 function drawStrokes(midd, diff) {
 
     if (midd === 1 && diff === 1) {
-        stroke0.style.width = "100%";
+        stroke0.style.width = "110%";
         stroke0.style.transform = `translate(0, calc(-1*min(32vh, 32vw)))`;
         console.log(1);
     } else if (midd === 4 && diff === 4) {
@@ -73,19 +73,19 @@ function drawStrokes(midd, diff) {
         stroke0.style.transform = `translate(0, 0) rotate(45deg)`;
         console.log(2);
     } else if (midd === 4 && diff === 1) {
-        stroke0.style.width = "100%";
+        stroke0.style.width = "110%";
         stroke0.style.transform = `translate(0, 0)`;
         console.log(2);
     } else if (midd === 7 && diff === 1) {
-        stroke0.style.width = "100%";
+        stroke0.style.width = "110%";
         stroke0.style.transform = `translate(0, min(32vh, 32vw))`;
         console.log(3);
     } else if (midd === 3 && diff === 3) {
-        stroke1.style.height = "100%";
+        stroke1.style.height = "110%";
         stroke1.style.transform = `translate(calc(-1*min(32vh, 32vw)), 0)`;
         console.log(4);
     } else if (midd === 4 && diff === 3) {
-        stroke1.style.height = "100%";
+        stroke1.style.height = "110%";
         stroke1.style.transform = `translate(0, 0)`;
         console.log(4);
     } else if (midd === 4 && diff === 2) {
@@ -93,7 +93,7 @@ function drawStrokes(midd, diff) {
         stroke1.style.transform = `translate(0, 0) rotate(45deg)`;
         console.log(5);
     } else if (midd === 5 && diff === 3) {
-        stroke1.style.height = "100%";
+        stroke1.style.height = "110%";
         stroke1.style.transform = `translate(min(32vh, 32vw), 0)`;
         console.log(6);
     }
