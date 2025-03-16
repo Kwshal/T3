@@ -15,3 +15,5 @@ double stroke win problem \\\ solved
 movesPlayed = ["","","","","","","","",""] is causing errors. \\\ undid
 
 function not getting value of movesPlayed hence showing no winner.
+
+bot

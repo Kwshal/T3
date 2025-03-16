@@ -1,3 +1,38 @@
+:root {
+    --default-o: #3a6b94;
+    --default-x: #4175c4;
+    --default-board: #479aa1;
+
+    --black: #000000;
+    --gold: #D4AF37;
+
+    --navy: #001F3F;
+    --blush: #FFB6C1;
+
+    --charcoal: #36454F;
+    --mint: #98FF98;
+
+    --teal: #00796B;
+    --mustard: #FFDB58;
+
+    --maroon: #800000;
+    --cream: #FFFDD0;
+
+    --olive: #556B2F;
+    --orange: #CC5500;
+
+    --slate: #708090;
+    --coral: #FF6F61;
+
+    --beige: #F5F5DC;
+    --forest: #228B22;
+
+    --lavender: #E6E6FA;
+    --dark-charcoal: #333333;
+
+    --terracotta: #E2725B;
+    --sage: #9CBA7F;
+}
 
 * {
     box-sizing: border-box;
@@ -6,14 +41,14 @@
 }
 
 #container {
-    height: min(100vh,100vw);
-    width: min(100vw,100vh);
+    height: min(100vh, 100vw);
+    width: min(100vw, 100vh);
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    border: min(5vh,5vw) solid transparent;
+    border: min(5vh, 5vw) solid transparent;
     background-color: #ffffff;
 }
 
@@ -23,7 +58,7 @@
     height: 100%;
     width: 100%;
     aspect-ratio: 1;
-    gap: min(5vh,5vw);
+    gap: min(5vh, 5vw);
     background-color: #479aa1;
     position: relative;
     overflow: hidden;
@@ -32,8 +67,8 @@
 
 .cell {
     /* 27 vw 26.67 */
-    height: min(27vh,27vw); 
-    width: min(27vh,27vw);
+    height: min(27vh, 27vw);
+    width: min(27vh, 27vw);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,9 +81,8 @@
 }
 
 .mark-x {
-    height: calc(0.15*min(27vh, 27vw));
-    /* height: calc(1.4*min(17vh, 17vw)); */
-    width: calc(1.2*min(17vh, 17vw));
+    height: calc(min(4vh, 4vw));
+    width: calc(min(4vh, 4vw));
     position: relative;
     border-radius: 20px;
     /* border: 1px solid #000; */
@@ -56,7 +90,22 @@
     transform: rotate(45deg);
     display: flex;
     justify-content: center;
+    animation: increase1 0.125s linear forwards;
 }
+
+@keyframes increase1 {
+    0% {
+        height: calc(min(4vh, 4vw));
+        width: calc(min(4vh, 4vw));
+    }
+
+    100% {
+        height: calc(min(4vh, 4vw));
+        width: calc(1.2*min(17vh, 17vw));
+    }
+}
+
+
 .mark-x::before {
     content: '';
     height: 100%;
@@ -67,6 +116,9 @@
     transform: rotate(-90deg);
     /* box-shadow: 0 0 0px min(1vh, 1vw) rgb(0, 0, 0); */
 }
+
+
+
 .mark-x::after {
     content: '';
     height: 100%;
@@ -78,40 +130,68 @@
 }
 
 .mark-o {
-    height: min(17vh, 17vw);
-    width: min(17vh, 17vw);
+    height: min(4vh, 4vw);
+    width: min(4vh, 4vw);
     position: relative;
     border-radius: 50%;
     border: calc(0.15 * min(27vh, 27vw)) solid #3a6b94;
+    border: calc(min(4vh, 4vw)) solid #3a6b94;
     background-color: transparent;
+    animation: increase2 0.125s linear forwards;
 }
 
-/* .mark-x, .mark-x::before {
-    box-shadow: 0 0 0px min(1vh, 1vw) rgb(0, 0, 0);
+@keyframes increase2 {
+    0% {
+        height: min(4vh, 4vw);
+        width: min(4vh, 4vw);
+    }
+
+    100% {
+        height: min(17vh, 17vw);
+        width: min(17vh, 17vw);
+    }
 }
+
+
+.mark-x,
+.mark-x::before {
+    transition: width 0.5s;
+    /* box-shadow: 0 0 0px min(1vh, 1vw) rgb(0, 0, 0); */
+}
+
 .mark-o {
-    box-shadow: 0 0 0px min(1vh, 1vw) rgb(0, 0, 0),inset 0 0 0px min(1vh, 1vw) rgb(0, 0, 0);
-} */
+    transition: height 0.5s, width 0.5s;
+
+    /* box-shadow: 0 0 0px min(1vh, 1vw) rgb(0, 0, 0), inset 0 0 0px min(1vh, 1vw) rgb(0, 0, 0); */
+}
+
 
 #winMsg {
     position: relative;
     /* align-self: center; */
 }
 
-#winStroke1,
-#winStroke2 {
-    height: 100%;
+#winStroke0,
+#winStroke1 {
     /* rotate: 90deg; */
     transform: translate(0, 0);
     opacity: 100%;
-    width: 14px;
+    /* width: min(calc(min(3.5vh, 3.5vw))); */
     border-radius: 50px;
     background-color: #142d35;
     isolation: isolate;
     z-index: 10;
     position: absolute;
     transition: height 0.5s;
-    display: none;
+    /* display: none; */
+}
+
+#winStroke0 {
+    height: min(3.5vh,3.5vw);
+}
+#winStroke1 {
+    width: min(3.5vh,3.5vw);
+    /* width: min(3.5vh, 3.5vw); */
 }
 
 .specell {
