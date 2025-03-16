@@ -48,7 +48,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    border: min(5vh, 5vw) solid transparent;
+    border: min(6vh, 6vw) solid transparent;
     background-color: #ffffff;
 }
 
@@ -58,7 +58,7 @@
     height: 100%;
     width: 100%;
     aspect-ratio: 1;
-    gap: min(5vh, 5vw);
+    gap: min(4vh, 4vw);
     background-color: #479aa1;
     position: relative;
     overflow: hidden;
@@ -78,13 +78,16 @@
     /* outline: min(1vh,1vw) solid #000; */
     /* overflow: hidden; */
     z-index: 20;
+    rotate: 0deg;
 }
 
 .mark-x {
     height: calc(min(4vh, 4vw));
     width: calc(min(4vh, 4vw));
     position: relative;
-    border-radius: 20px;
+
+
+    border-radius: min(2vh, 2vw);
     /* border: 1px solid #000; */
     background-color: #4175c4;
     transform: rotate(45deg);
@@ -102,6 +105,7 @@
     100% {
         height: calc(min(4vh, 4vw));
         width: calc(1.2*min(17vh, 17vw));
+
     }
 }
 
@@ -111,7 +115,7 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    border-radius: 20px;
+    border-radius: min(2vh, 2vw);
     background-color: #4175c4;
     transform: rotate(-90deg);
     /* box-shadow: 0 0 0px min(1vh, 1vw) rgb(0, 0, 0); */
@@ -124,7 +128,7 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    border-radius: 20px;
+    border-radius: min(2vh, 2vw);
     background-color: #4175c4;
     box-shadow: none;
 }
@@ -155,12 +159,12 @@
 
 .mark-x,
 .mark-x::before {
-    transition: width 0.5s;
+    transition: width 0.15s;
     /* box-shadow: 0 0 0px min(1vh, 1vw) rgb(0, 0, 0); */
 }
 
 .mark-o {
-    transition: height 0.5s, width 0.5s;
+    transition: height 0.15s, width 0.15s;
 
     /* box-shadow: 0 0 0px min(1vh, 1vw) rgb(0, 0, 0), inset 0 0 0px min(1vh, 1vw) rgb(0, 0, 0); */
 }
@@ -179,19 +183,19 @@
     /* width: min(calc(min(3.5vh, 3.5vw))); */
     border-radius: 50px;
     background-color: #142d35;
-    isolation: isolate;
-    z-index: 10;
+    z-index: 1;
     position: absolute;
-    transition: height 0.5s;
+    transition: height 0.3s, width 0.3s;
     /* display: none; */
 }
 
 #winStroke0 {
     height: min(3.5vh,3.5vw);
+    width: 0%;
 }
 #winStroke1 {
+    height: 0%;
     width: min(3.5vh,3.5vw);
-    /* width: min(3.5vh, 3.5vw); */
 }
 
 .specell {

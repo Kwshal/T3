@@ -4,7 +4,7 @@ var cells = document.querySelectorAll(".cell"); // not changing var into let, it
 let movesCount = 0;
 let movesArr = Array(9).fill(''); // Array to track moves
 
-// let winner = null;
+let winner = null;
 // let patternList = [];
 
 board.addEventListener("click", addClicks);
@@ -46,14 +46,15 @@ function checkWinner() {
         for (let pattern of winPatterns[type]) { // for...of for arr
             let win = movesArr[pattern[0]] !== '' && movesArr[pattern[0]] === movesArr[pattern[1]] && movesArr[pattern[1]] === movesArr[pattern[2]];
             if (win) {
+                winner = player;
                 drawStrokes(pattern[1], pattern[1] - pattern[0]);
                 // console.log(pattern[1], pattern[1]-pattern[0]);
             }
         }
     }
     // console.log(difference);
-    if (patternList.length > 0) {
-        console.log(patternList);
+    if (winner) {
+        console.log(player);
         winMsg.textContent = `${player} wins`;
         board.removeEventListener('click', addClicks);
     } else if (movesCount === 9) {
@@ -65,36 +66,36 @@ function checkWinner() {
 function drawStrokes(midd, diff) {
 
     if (midd === 1 && diff === 1) {
-        stroke0.style.width = "110%";
-        stroke0.style.transform = `translate(0, calc(-1*min(32vh, 32vw)))`;
+        stroke0.style.width = "105%";
+        stroke0.style.transform = `translate(0, calc(-1*min(31vh, 31vw)))`;
         console.log(1);
     } else if (midd === 4 && diff === 4) {
-        stroke0.style.width = "140%";
-        stroke0.style.transform = `translate(0, 0) rotate(45deg)`;
+        stroke0.style.width = "130%";
+        stroke0.style.transform = `translate(0, 0) rotate(46deg)`;
         console.log(2);
     } else if (midd === 4 && diff === 1) {
-        stroke0.style.width = "110%";
+        stroke0.style.width = "105%";
         stroke0.style.transform = `translate(0, 0)`;
         console.log(2);
     } else if (midd === 7 && diff === 1) {
-        stroke0.style.width = "110%";
-        stroke0.style.transform = `translate(0, min(32vh, 32vw))`;
+        stroke0.style.width = "105%";
+        stroke0.style.transform = `translate(0, min(31vh, 31vw))`;
         console.log(3);
     } else if (midd === 3 && diff === 3) {
-        stroke1.style.height = "110%";
-        stroke1.style.transform = `translate(calc(-1*min(32vh, 32vw)), 0)`;
+        stroke1.style.height = "105%";
+        stroke1.style.transform = `translate(calc(-1*min(31vh, 31vw)), 0)`;
         console.log(4);
     } else if (midd === 4 && diff === 3) {
-        stroke1.style.height = "110%";
+        stroke1.style.height = "105%";
         stroke1.style.transform = `translate(0, 0)`;
         console.log(4);
     } else if (midd === 4 && diff === 2) {
-        stroke1.style.height = "140%";
-        stroke1.style.transform = `translate(0, 0) rotate(45deg)`;
+        stroke1.style.height = "130%";
+        stroke1.style.transform = `translate(0, 0) rotate(46deg)`;
         console.log(5);
     } else if (midd === 5 && diff === 3) {
-        stroke1.style.height = "110%";
-        stroke1.style.transform = `translate(min(32vh, 32vw), 0)`;
+        stroke1.style.height = "105%";
+        stroke1.style.transform = `translate(min(31vh, 31vw), 0)`;
         console.log(6);
     }
 }
